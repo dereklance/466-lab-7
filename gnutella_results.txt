@@ -1,0 +1,14 @@
+Time to read data and build graph: 27.5717 seconds
+Converged in 20 iterations
+1 obj: 1676 with pagerank: 0.00025879799783894695
+2 obj: 1020 with pagerank: 0.00025326406437042686
+3 obj: 386 with pagerank: 0.00024178081245443612
+4 obj: 222 with pagerank: 0.00023943617668093392
+5 obj: 227 with pagerank: 0.00023273501726320673
+6 obj: 388 with pagerank: 0.00022998497443668106
+7 obj: 389 with pagerank: 0.00022889140048578803
+8 obj: 688 with pagerank: 0.00022018003393356011
+9 obj: 226 with pagerank: 0.0002157160719582571
+10 obj: 842 with pagerank: 0.00021527947684313182
+11 obj: 876 with pagerank: 0.0002130994577130778
+Page rank processing time: 234.6206 seconds
