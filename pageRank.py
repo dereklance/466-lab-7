@@ -32,8 +32,7 @@ def football(rows):
 	return nodes
 
 def write(string):
-	sys.stdout.write('\r')
-	sys.stdout.write(str(string))
+	sys.stdout.write('\r' + str(string))
 	sys.stdout.flush()
 
 def gnutella(rows):
@@ -70,7 +69,6 @@ def lesmis(rows):
 			nodes[index_right].add_outgoing(row[0])
 		
 	return nodes
-		
 
 def undirected(rows):
 	nodes = []
@@ -99,7 +97,6 @@ def sum_page_ranks(page_ranks, index, nodes):
 
 	return total
 
-
 def total_difference(v1, v2):
 	return sum(abs(x - y) for x, y in zip(v1, v2))
 
@@ -115,6 +112,7 @@ def page_rank(nodes, d=0.85, epsilon=1.0e-8):
 			for i in range(N) ]
 
 		diff = total_difference(page_ranks, new_ranks)
+		print(f"Convergence Progress (diff:epsilon): {diff}:{epsilon}")
 		if diff < epsilon:
 			break
 
@@ -131,9 +129,9 @@ def get_graph_parse_functions(arg):
 		'lesmis': (lesmis, parse_small_dataset),
 		'football': (football, parse_small_dataset),
 		'gnutella': (gnutella, parse_large_dataset),
-		'livejournal': (live_journal, parse_large_dataset),
-		'slashdot': (slash_dot, parse_large_dataset),
-		'amazon': (amazon, parse_large_dataset)
+		'livejournal': (gnutella, parse_large_dataset),
+		'slashdot': (gnutella, parse_large_dataset),
+		'amazon': (gnutella, parse_large_dataset)
 	}
 	return x.get(arg, (None, None))
 
@@ -146,15 +144,14 @@ def main():
 	lines = parse_file(file_path)
 	nodes = construct_graph(lines)
 	end = time.time()
-	print(f'Time to read data and build graph: {round(end - start, 4)} seconds')
+	print(f'\nTime to read data and build graph: {round(end - start, 4)} seconds')
 
 	start = time.time()
 	page_ranks = page_rank(nodes)
 	page_ranks.sort(key=itemgetter(0), reverse=True)
 	for index, (rank, node) in enumerate(page_ranks):
 		print(f'{index + 1} obj: {node.label} with pagerank: {rank}')
-		if index == 10:
-			break
+
 	end = time.time()
 	print(f'Page rank processing time: {round(end - start, 4)} seconds')
 	
