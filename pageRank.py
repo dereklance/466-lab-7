@@ -1,3 +1,6 @@
+# Ian Battin: ibattin@calpoly.edu
+# Derek Lance: dwlance@calpoly.edu
+
 import sys, csv, time
 from Node import Node
 from operator import itemgetter
@@ -38,7 +41,7 @@ def write(string):
 def gnutella(rows):
 	nodes = []
 	for index, row in enumerate(rows):
-		write(f'row {index + 1} / {len(rows)}')
+		#write(f'row {index + 1} / {len(rows)}')
 		index_left = find_node(nodes, row[0])
 		index_right = find_node(nodes, row[1])
 		if index_left == -1:
@@ -128,6 +131,7 @@ def get_graph_parse_functions(arg):
 		'karate': (undirected, parse_small_dataset),
 		'lesmis': (lesmis, parse_small_dataset),
 		'football': (football, parse_small_dataset),
+		'wiki': (gnutella, parse_large_dataset),
 		'gnutella': (gnutella, parse_large_dataset),
 		'livejournal': (gnutella, parse_large_dataset),
 		'slashdot': (gnutella, parse_large_dataset),

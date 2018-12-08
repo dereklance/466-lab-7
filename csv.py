@@ -1,3 +1,6 @@
+# Ian Battin: ibattin@calpoly.edu
+# Derek Lance: dwlance@calpoly.edu
+
 def parse_small_dataset(file_path):
 	with open(file_path) as file:
 		lines = []
