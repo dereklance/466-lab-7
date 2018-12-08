@@ -1,5 +1,5 @@
 # Ian Battin: ibattin@calpoly.edu
-# Derek Lance: dwlance@calpoly.edu
+# Derek Lance: dwalance@calpoly.edu
 
 class Node:
 	def __init__(self, label):

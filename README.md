@@ -1,7 +1,7 @@
 # 466-lab-7
 
 Ian Battin: ibattin@calpoly.edu
-Derek Lance: dwlance@calpoly.edu
+Derek Lance: dwalance@calpoly.edu
 
 ## How to Run
 

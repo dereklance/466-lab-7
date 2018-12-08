@@ -1,5 +1,5 @@
 # Ian Battin: ibattin@calpoly.edu
-# Derek Lance: dwlance@calpoly.edu
+# Derek Lance: dwalance@calpoly.edu
 
 import sys, csv, time
 from Node import Node
